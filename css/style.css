@@ -1,0 +1,68 @@
+/* -----------------------
+Base styles
+------------------------*/
+
+header{
+	background-color: #EFF0DC;
+}
+
+body{
+	background-color: #F5F6EB;
+}
+
+h1{
+	text-align: center;
+	margin: 0px 0px 0px 0px;
+	height: 5em;
+	line-height: 5em;
+}
+
+ul{	
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	background-color: black;
+}
+ul li{
+	display: inline-block;
+	font-size: 1.5em;
+	width: 5em;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:hover{
+	background-color: #C9CABB;
+}
+
+a:link{
+	color: white;
+}
+
+a:visited{
+	color: white;
+}
+
+
+/* -----------------------
+Layout styles
+------------------------*/
+
+.container{
+	max-width: 50em;
+	margin: 0 auto;
+}
+
+/* -----------------------
+Single styles
+------------------------*/
+
+#placeholder{
+	max-height: 20em;
+	max-width: 50em;
+}
+
+#description{
+	color: #34352C;
+}

@@ -3,19 +3,29 @@
 <head>
 	<title>choose a image</title>
 	<script type="text/javascript" src="scripts/showPic.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<h1>Snapshots</h1>
-<ul>
-	<li><a href="img/babies.png" onclick="showPic(this); return false;">first
-	</a></li>
-	<li><a href="img/black_circle.png" onclick="showPic(this); return false;">second
-	</a></li>
-	<li><a href="img/car_blue_small.png" onclick="showPic(this); return false;">third
-	</a></li>
-	<li><a href="img/car_red.png" onclick="showPic(this); return false;">forth
-	</a></li>
-</ul>
-<img src="img/car.png" id="placeholder">
+<header>
+	<h1>Snapshots</h1>
+		<ul>
+			<div class="container">
+				<li><a href="img/babies.png" title="babies" onclick="showPic(this); return false;">First
+				</a></li>
+				<li><a href="img/black_circle.png" title="a black circle" onclick="showPic(this); return false;">Second
+				</a></li>
+				<li><a href="img/car_blue_small.png" title="a blue car" onclick="showPic(this); return false;">Third
+				</a></li>
+				<li><a href="img/car_red.png" title="a red car" onclick="showPic(this); return false;">Forth
+				</a></li>
+			</div>
+		</ul>
+</header>
+<div class="container">
+	<p id="description">Choose an image</p>
+</div>
+<div class="container">
+	<img src="img/car.png" id="placeholder">
+</div>
 </body>
 </html>
