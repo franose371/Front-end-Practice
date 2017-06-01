@@ -48,7 +48,7 @@ function showPic(whichPic){
 	}
 	var description = document.getElementById("description");
 	//检查是否第一个子元素是文本节点
-	if (description.firstChild.nodeValue == 3) {
+	if (description.firstChild.nodeType == 3) {
 		description.firstChild.nodeValue = text;
 	}
 	return false;
