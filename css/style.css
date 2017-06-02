@@ -59,6 +59,7 @@ Single styles
 ------------------------*/
 
 #placeholder{
+	padding: 1em 0em 0em 0em;
 	max-height: 20em;
 	max-width: 50em;
 }

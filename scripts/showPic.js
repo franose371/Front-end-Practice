@@ -1,4 +1,3 @@
-
 function addLoadEvent(func) {
     var oldonload = window.onload;//将现有的事件处理函数的值存入变量中
     if (typeof window.onload != 'function') {
@@ -10,8 +9,6 @@ function addLoadEvent(func) {
       }
     }
 }
-
-addLoadEvent(prepareGallery);
 
 //将onclick绑定到id=imagegallery中的<a>元素中
 function prepareGallery(){
@@ -53,3 +50,39 @@ function showPic(whichPic){
 	}
 	return false;
 }
+
+//Create placeholder and description elements
+	function preparePlaceholder(){
+	var firstdiv = document.createElement("div");
+	var seconddiv = document.createElement("div");
+	firstdiv.setAttribute("class","container");
+	seconddiv.setAttribute("class","container");
+
+	var placeholder = document.createElement("img");
+	placeholder.setAttribute("id","placeholder");
+	placeholder.setAttribute("src","img/car.png");
+	placeholder.setAttribute("alt","my image gallery");
+
+	var description = document.createElement("p");
+	var desctext = document.createTextNode("Choose an image");
+	description.setAttribute("id","description");
+	description.appendChild(desctext);
+
+	firstdiv.appendChild(placeholder);
+	seconddiv.appendChild(description);
+
+	document.body.appendChild(firstdiv);
+	document.body.appendChild(seconddiv);
+	}
+// //Insert element after target element
+// function insertAfter(newElement, targetElement){
+// 	var parent = targetElement.parentNode;
+// 	if(parent.lastChild == targetElement){
+// 		parent.appendChild(newElement);
+// 	} else{
+// 		parent.insertBefore(newElement,targetElement.nextSibling);
+// 	}
+// }
+
+addLoadEvent(prepareGallery);
+addLoadEvent(preparePlaceholder);
