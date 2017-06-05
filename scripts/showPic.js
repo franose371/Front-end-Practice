@@ -74,15 +74,15 @@ function showPic(whichPic){
 	document.body.appendChild(firstdiv);
 	document.body.appendChild(seconddiv);
 	}
-// //Insert element after target element
-// function insertAfter(newElement, targetElement){
-// 	var parent = targetElement.parentNode;
-// 	if(parent.lastChild == targetElement){
-// 		parent.appendChild(newElement);
-// 	} else{
-// 		parent.insertBefore(newElement,targetElement.nextSibling);
-// 	}
-// }
+//Insert element after target element
+function insertAfter(newElement, targetElement){
+	var parent = targetElement.parentNode;
+	if(parent.lastChild == targetElement){
+		parent.appendChild(newElement);
+	} else{
+		parent.insertBefore(newElement,targetElement.nextSibling);
+	}
+}
 
 addLoadEvent(prepareGallery);
 addLoadEvent(preparePlaceholder);
