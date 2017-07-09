@@ -32,7 +32,7 @@
 				html += '<tr>';
 			}
 
-			html += '<td>' + data.showDate + '</td>'
+			html += '<td data-date="' + data.date + '">' + data.showDate + '</td>'
 				//余6，为每周的最后一天
 			if (i % 7 === 6) {
 				html += '</tr>';
@@ -101,6 +101,7 @@
 
 		$wrapper.addEventListener('click', function(e) {
 			var $target = e.target;
+			if (!$target.classList.contains('ui-datepicker-btn')) return;
 			//上一月
 			if ($target.classList.contains('ui-datepicker-prev-btn')) {
 				datepicker.render('prev');
@@ -110,5 +111,35 @@
 
 			}
 		}, false);
+
+		$wrapper.addEventListener('click', function(e) {
+			var $target = e.target;
+			//若点击的不是日期
+			if ($target.tagName.toLowerCase() !== 'td') return;
+			var date = new Date(monthData.year, monthData.month - 1, $target.dataset.date);
+			$input.value = format(date);
+
+			if (isOpen) {
+				$wrapper.classList.remove('ui-datepicker-wrapper-show');
+				isOpen = false;
+			}
+		}, false);
+
 	};
+
+	function format(date) {
+		ret = '';
+
+		var padding = function(num) {
+			if (num <= 9) {
+				return '0' + num;
+			} else return num;
+		}
+		ret += date.getFullYear() + '-';
+
+		ret += padding(date.getMonth() + 1) + '-';
+
+		ret += padding(date.getDate());
+		return ret;
+	}
 })();
