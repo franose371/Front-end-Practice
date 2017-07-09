@@ -1,4 +1,4 @@
 # Front-end-Practice
 
-  学习前端技术时跟随书本所做的练习 </br>
-  目前主要为《Javascripts Dom编程艺术》的练习
+**js+dom**:《javascript dom编程艺术》一书中的练习
+**datepicker**:一个简单的日历选择器
