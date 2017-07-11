@@ -1,0 +1,11 @@
+.wrapper {
+	position: relative;
+	float: left;
+}
+
+.pixiv-download-button {
+	position: absolute;
+	top:0px;
+	left: 0px;
+	display: none;
+}
