@@ -92,12 +92,7 @@
 			}
 		}, false);
 
-		// $input.addEventListener('focusout', function() {
-		// 	if (isOpen) {
-		// 		$wrapper.classList.remove('ui-datepicker-wrapper-show');
-		// 		isOpen = false;
-		// 	}
-		// }, false);
+
 
 		$wrapper.addEventListener('click', function(e) {
 			var $target = e.target;

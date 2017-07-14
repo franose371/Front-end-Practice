@@ -1,11 +1,11 @@
-.wrapper {
+.pixiv-wrapper {
 	position: relative;
-	float: left;
 }
 
 .pixiv-download-button {
-	position: absolute;
-	top:0px;
-	left: 0px;
+	position: fixed;
+	top: 50%;
+	right: 50%;
+	margin-right: -300px;
 	display: none;
 }
