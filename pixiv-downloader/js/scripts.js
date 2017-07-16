@@ -8,33 +8,34 @@ resultSrc = regPre.exec(html);
 var $imgDiv = $("[src= " + "'" + resultSrc + "'" + "]");
 
 var $button = document.createElement("button");
-$button.classList.add("btn");
-$button.classList.add("btn-sm");
-$button.classList.add("btn-default");
+
+var $button_wrapper = document.createElement("div");
+$button_wrapper.classList.add("pixiv-download-wrapper");
+
 $button.classList.add("pixiv-download-button");
 $($button).text("download");
 
-var $wrapper = document.createElement("div");
-$wrapper.className = "pixiv-wrapper";
-$imgDiv.wrap($wrapper);
+$button_wrapper.appendChild($button);
 
 
-$(".pixiv-wrapper")[0].appendChild($button);
-
-
+//.bookmark-container
+var bookmark = $(".bookmark-container")
+bookmark[0].childNodes[0].before($button_wrapper);
 
 var $download = $(".pixiv-download-button")[0];
 
-var images = $("body").find("img");
+// // var images = $("body").find("img");
 
+var isClick = false;
 
-$(".pixiv-wrapper").mouseover(function() {
-	$(".pixiv-download-button").css("display", "block");
-});
-$(".pixiv-wrapper").mouseout(function() {
-	$(".pixiv-download-button").css("display", "none");
-});
+var imageDownload = {
+	isclick: isClick,
+	imgsrc: $imgDiv[0].src
+};
 
 $download.addEventListener("click", function(){
-	chrome.extension.sendMessage($imgDiv.src);
+	isClick = true;
+	chrome.runtime.sendMessage(imageDownload, function(response) {
+		console.log('from content scripts');
+	});
 }, false);

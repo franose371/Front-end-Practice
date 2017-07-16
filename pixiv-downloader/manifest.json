@@ -3,15 +3,16 @@
 	"name": "pixiv downloader",
 	"version": "1.0",
 	"description": "Download image in current page for pixiv.net",
-	"permissions": ["downloads", "<all_urls>"],
+
 	"background": {
 		"scripts": ["js/background.js", "js/jquery-3.2.1.min.js"]
 	},
 	"content_scripts": [
 		{
-			"matches": ["<all_urls>"],
-			"css": ["css/style.css","css/bootstrap.min.css"],
-			"js": ["js/jquery-3.2.1.min.js","js/scripts.js","js/bootstrap.min.js"]
+			"matches": ["http://www.pixiv.net/*","https://www.pixiv.net/*"],
+			"css": ["css/style.css"],
+			"js": ["js/jquery-3.2.1.min.js","js/scripts.js"]
 		}
-	]
+	],
+	"permissions": [ "downloads", "https://i.pximg.net/*"]
 }

@@ -1,11 +1,20 @@
-.pixiv-wrapper {
-	position: relative;
+.pixiv-download-button {
+	background-color: #eeeeee;
+	border: none;
+	border-radius: 5px;
+	width: 90px;
+	height: 30px;
+	font-weight: bold;
+	color: #666666;
+	cursor:pointer;
+	transition: background-color 0.4s;
+	outline: none;
 }
 
-.pixiv-download-button {
-	position: fixed;
-	top: 50%;
-	right: 50%;
-	margin-right: -300px;
-	display: none;
+.pixiv-download-wrapper {
+	float: left;
+}
+
+.pixiv-download-button:hover {
+	background-color: #e3e3e3;
 }
