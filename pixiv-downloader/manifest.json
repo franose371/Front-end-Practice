@@ -7,12 +7,10 @@
 	"background": {
 		"scripts": ["js/background.js", "js/jquery-3.2.1.min.js"]
 	},
-	"content_scripts": [
-		{
-			"matches": ["http://www.pixiv.net/*","https://www.pixiv.net/*"],
-			"css": ["css/style.css"],
-			"js": ["js/jquery-3.2.1.min.js","js/scripts.js"]
-		}
-	],
-	"permissions": [ "downloads", "https://i.pximg.net/*"]
+	"content_scripts": [{
+		"matches": ["http://www.pixiv.net/*", "https://www.pixiv.net/*"],
+		"css": ["css/style.css"],
+		"js": ["js/jquery-3.2.1.min.js", "js/scripts.js"]
+	}],
+	"permissions": ["downloads", "webRequestBlocking", "webRequest", "https://i.pximg.net/*"],
 }

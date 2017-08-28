@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Vue To-do List</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style type="text/css">
+		html,body{
+			width: 100%;
+		}
+		.container {
+			width: 30%;
+			margin: 0 auto;
+		}
+		h1 {
+			text-align: center;
+		}
+		.finished {
+			text-decoration: underline;
+		}
+
+		ul li{
+			list-style: none;
+		}
+		.icon-cross {
+			padding-left: 20px;
+		}
+		.show {
+			background-color: red;
+			border: none;
+			margin-left: 20px;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="container" id="todolist">
+		<h1>Vue To-do List hello</h1>
+		<input type="text" @keyup.13="addItem" name="input" id="input" v-model="myItem">
+		<ol>
+			<my-component v-for="(item,index) in items" :data="item.content" :status="item.display" :key="index" v-on:togglefinish = "toggleItem(item)" :class="{finished:item.isFinished}" v-on:delitem = "items.splice(index,1)"></my-component>
+		</ol>
+	</div>
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript" src="bundle.js"></script>
+	
+</body>
+</html>
